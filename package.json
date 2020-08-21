@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap-icons": "^1.0.0-alpha5",
-    "axios": "^0.19.2"
+    "serve": "^11.3.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"serve"
+    "start": "serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
-

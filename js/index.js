@@ -32,30 +32,37 @@ async function getBooks(token) {
   }
 }
 
-
 //책 목록을 보기
 function render(books) {
   const listElement = document.querySelector('#list');
+
+  let count = 0;
   for (let i = 0; i < books.length; i++) {
+    var imageArray = new Array("./images/1.jpg","./images/2.jpg","./images/3.jpg",
+    "./images/4.jpg","./images/5.jpg","./images/6.jpg",
+    "./images/7.jpg","./images/8.jpg","./images/9.jpg",
+    "./images/10.jpg","./images/11.jpg","./images/12.jpg",);
+    var randomNum  = Math.round(Math.random() * 11);
+    const defaultImage = imageArray[0];
+
     const book = books[i];
     const bookElement = document.createElement('div');
     bookElement.classList.value = 'col-md-4';
+    
     bookElement.innerHTML = `
      <div class="card mb-4 shadow-sm">
-       <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-         <title>${book.title}</title>
-         <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-           dy=".3em">${book.title}</text>
-       </svg>
+     <img id="img ${count++}" src=${defaultImage} class="bd-placeholder-img card-img-top" width="100%" height="225" border="0" backrgound-size="100%"/>
        <div class="card-body">
          <p class="card-text">${book.title === '' ? '제목 없음' : book.title}</p>
          <div class="d-flex justify-content-between align-items-center">
            <div class="btn-group">
             <a href="/book?id=${book.bookId}">
-              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button 
+              type="button" 
+              class="btn btn-sm btn-outline-secondary">
+              View</button>
             </a>
-             <button
+            <button
               type="button"
               class="btn btn-sm btn-outline-secondary btn-delete"
               data-book-id="${book.bookId}"
@@ -68,8 +75,15 @@ function render(books) {
        </div>
      </div>
      `;
+    
     listElement.append(bookElement);
+    console.log(randomNum);
+    [...bookElement.children].forEach((ele)=>{
+     ele.querySelector('.card-img-top').src = imageArray[randomNum];
+    });
+    
   }
+  
   document.querySelectorAll('.btn-delete').forEach(element => {
     element.addEventListener('click', async e => {
       const bookId = e.target.dataset.bookId;
@@ -153,3 +167,4 @@ async function main() {
 
 }
 document.addEventListener('DOMContentLoaded', main);
+
