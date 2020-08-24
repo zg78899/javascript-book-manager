@@ -77,11 +77,10 @@ function render(books) {
      `;
     
     listElement.append(bookElement);
-    console.log(randomNum);
+    
     [...bookElement.children].forEach((ele)=>{
      ele.querySelector('.card-img-top').src = imageArray[randomNum];
     });
-    
   }
   
   document.querySelectorAll('.btn-delete').forEach(element => {
@@ -140,6 +139,7 @@ function bindLogoutbutton() {
 }
 //메인 함수
 async function main() {
+  
   //버튼에 연결
   bindLogoutbutton();
   //토큰 체크
@@ -161,7 +161,7 @@ async function main() {
   if (books === null) {
     return;
   }
-  console.log(books);
+  // console.log(books);
   // 받아온 책 그리기
   render(books);
 
