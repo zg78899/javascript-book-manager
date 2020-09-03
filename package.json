@@ -1,19 +1,38 @@
 {
   "name": "js-book-manager",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap-icons": "^1.0.0-alpha5",
     "serve": "^11.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve"
+    "start": "serve",
+    "build": "webpack -w"
+    
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zg78899/javascript-book-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zg78899/javascript-book-manager/issues"
+  },
+  "homepage": "https://github.com/zg78899/javascript-book-manager#readme",
+  "description": ""
 }

@@ -2,6 +2,8 @@
 function getToken() {
   return localStorage.getItem('token')
 }
+//
+console.log(bookService.getBook(token));
 
 async function getUserByToken(token) {
   try {
@@ -38,10 +40,10 @@ function render(books) {
 
   let count = 0;
   for (let i = 0; i < books.length; i++) {
-    var imageArray = new Array("./images/1.jpg","./images/2.jpg","./images/3.jpg",
-    "./images/4.jpg","./images/5.jpg","./images/6.jpg",
-    "./images/7.jpg","./images/8.jpg","./images/9.jpg",
-    "./images/10.jpg","./images/11.jpg","./images/12.jpg",);
+    var imageArray = new Array("./src/images/1.jpg","./src/images/2.jpg","./src/images/3.jpg",
+    "./src/images/4.jpg","./src/images/5.jpg","./src/images/6.jpg",
+    "./src/images/7.jpg","./src/images/8.jpg","./src/images/9.jpg",
+    "./src/images/10.jpg","./src/images/11.jpg","./src/images/12.jpg",);
     var randomNum  = Math.round(Math.random() * 11);
     const defaultImage = imageArray[0];
 

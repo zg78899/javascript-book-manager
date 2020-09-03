@@ -19,7 +19,7 @@ async function getUserByToken(token) {
 async function logout() {
   const token = getToken();
   if (token === null) {
-    location.assign('/login');
+    location.assign('src/login');
     return;
   }
   try {
