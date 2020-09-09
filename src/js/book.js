@@ -19,7 +19,7 @@ async function getUserByToken(token) {
 async function logout() {
   const token = getToken();
   if (token === null) {
-    location.assign('src/login');
+    location.assign('/login');
     return;
   }
   try {
@@ -138,3 +138,7 @@ async function main() {
 }
 
 document.addEventListener('DOMContentLoaded', main);
+
+
+
+
